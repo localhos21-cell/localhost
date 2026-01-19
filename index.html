@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Feron Gaming Studio - Level Up Your Experience</title>
+  <title>GamerZone - গেমিং এক্সেসরিজ শপ</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   
   <style>
     * {
@@ -17,20 +17,18 @@
 
     body {
       font-family: 'Roboto', sans-serif;
-      background: #0a0a0a;
-      color: #e0e0e0;
-      line-height: 1.5;
-      overflow-x: hidden;
+      background: #0a0a0e;
+      color: #e0e0ff;
+      line-height: 1.6;
     }
 
-    /* Navbar */
-    nav {
+    header {
+      background: rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(10px);
       position: fixed;
-      top: 0;
       width: 100%;
-      z-index: 1000;
-      background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(8px);
+      top: 0;
+      z-index: 100;
       padding: 1rem 5%;
       display: flex;
       justify-content: space-between;
@@ -40,404 +38,198 @@
 
     .logo {
       font-family: 'Orbitron', sans-serif;
-      font-size: clamp(1.6rem, 6vw, 2.2rem);
-      color: #00ff9d;
-      font-weight: 900;
-      letter-spacing: 2px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-    }
-
-    .nav-links a {
-      color: #d0ffd0;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1.1rem;
-      transition: 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: #00ff9d;
-      text-shadow: 0 0 10px #00ff9d;
-    }
-
-    /* Mobile Menu */
-    .menu-toggle {
-      display: none;
       font-size: 2rem;
       color: #00ff9d;
-      cursor: pointer;
+      font-weight: 700;
     }
 
-    @media (max-width: 768px) {
-      .nav-links {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.95);
-        flex-direction: column;
-        align-items: center;
-        gap: 1.8rem;
-        padding: 2rem 0;
-        transform: translateY(-100%);
-        transition: transform 0.4s ease;
-      }
-
-      .nav-links.active {
-        transform: translateY(0);
-      }
-
-      .nav-links a {
-        font-size: 1.4rem;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
+    nav a {
+      color: #d0ffd0;
+      margin-left: 2rem;
+      text-decoration: none;
+      font-weight: 500;
     }
 
-    /* Hero */
+    nav a:hover {
+      color: #00ff9d;
+    }
+
     .hero {
-      min-height: 100vh;
-      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
-                  url('https://images.stockcake.com/public/d/4/c/d4c2d1fc-6fa7-4072-938e-49390200316c/cyberpunk-ninja-rises-stockcake.jpg') center/cover no-repeat;
+      height: 60vh;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
+                  url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80') center/cover;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 0 5%;
-    }
-
-    .hero-content {
-      max-width: 900px;
+      margin-top: 70px;
     }
 
     .hero h1 {
       font-family: 'Orbitron', sans-serif;
-      font-size: clamp(2.8rem, 10vw, 5.5rem);
+      font-size: clamp(2.5rem, 8vw, 5rem);
       color: #00ff9d;
+      text-shadow: 0 0 20px #00ff9d88;
+    }
+
+    .products {
+      padding: 4rem 5%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .product-card {
+      background: #111118;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #00ff9d22;
+      transition: all 0.3s;
+      text-align: center;
+      padding: 1.2rem;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      border-color: #00ff9d;
+      box-shadow: 0 15px 40px rgba(0, 255, 157, 0.15);
+    }
+
+    .product-img {
+      width: 100%;
+      height: 220px;
+      object-fit: contain;
+      background: #000;
+      border-radius: 12px;
       margin-bottom: 1rem;
-      text-shadow: 0 0 20px #00ff9d66;
-      letter-spacing: 4px;
     }
 
-    .hero h2 {
-      font-size: clamp(1.6rem, 6vw, 2.8rem);
-      color: #ffffff;
-      margin-bottom: 1.5rem;
+    .product-name {
+      font-size: 1.3rem;
       font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #ffffff;
     }
 
-    .hero p {
-      font-size: clamp(1.1rem, 4vw, 1.4rem);
-      color: #b0ffb0;
-      margin-bottom: 3rem;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
+    .price {
+      font-size: 1.6rem;
+      color: #00ff9d;
+      font-weight: 700;
+      margin: 0.5rem 0;
     }
 
-    .btn {
-      display: inline-block;
-      padding: 1.2rem 3rem;
+    .rating {
+      color: #ffd700;
+      font-size: 1.1rem;
+      margin: 0.6rem 0;
+    }
+
+    .likes {
+      color: #ff6b6b;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .btn-buy {
       background: #00ff9d;
       color: #000;
-      font-family: 'Orbitron', sans-serif;
-      font-weight: 700;
-      text-decoration: none;
+      border: none;
+      padding: 0.9rem 2rem;
       border-radius: 50px;
-      font-size: 1.3rem;
-      margin: 0.8rem;
-      transition: all 0.4s;
-      box-shadow: 0 0 30px #00ff9d66;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s;
+      width: 100%;
     }
 
-    .btn:hover {
-      transform: scale(1.08);
-      box-shadow: 0 0 50px #00ff9d;
+    .btn-buy:hover {
+      background: #00e08c;
+      transform: scale(1.05);
     }
 
-    .btn-outline {
-      background: transparent;
-      border: 3px solid #00ff9d;
-      color: #00ff9d;
-    }
-
-    /* Footer */
     footer {
       background: #000;
-      padding: 4rem 5%;
+      padding: 3rem 5%;
       text-align: center;
       border-top: 1px solid #00ff9d33;
-    }
-
-    footer p {
-      font-size: 1.1rem;
-      color: #777;
+      color: #777799;
     }
 
     @media (max-width: 768px) {
-      .hero {
-        padding-top: 6rem;
-      }
-
-      .btn {
-        padding: 1rem 2.5rem;
-        font-size: 1.1rem;
-        width: 80%;
-        margin: 1rem auto;
-        display: block;
-      }
+      .hero h1 { font-size: 3.5rem; }
+      nav a { margin-left: 1rem; font-size: 0.95rem; }
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <div class="logo">FERON</div>
-    
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    
-    <div class="nav-links" id="navLinks">
+  <header>
+    <div class="logo">GamerZone</div>
+    <nav>
       <a href="#">হোম</a>
-      <a href="#">গেমস</a>
-      <a href="#">আমাদের সম্পর্কে</a>
+      <a href="#">প্রোডাক্ট</a>
+      <a href="#">কার্ট</a>
       <a href="#">যোগাযোগ</a>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
   <section class="hero">
-    <div class="hero-content">
-      <h1>LEVEL UP</h1>
-      <h2>NEW GAMING EXPERIENCE</h2>
-      <p>YOUR ULTIMATE LIVE GAMING WORLD... একটা গেম স্টুডিও যারা immersive gameplay ও high-quality mechanics প্রায়োরিটি দেয়।</p>
-      
-      <div>
-        <a href="#" class="btn">PURCHASE GAME</a>
-        <a href="#" class="btn btn-outline">VIEW MORE</a>
+    <h1>আপনার গেমিং লেভেল আপ করুন</h1>
+  </section>
+
+  <section class="products">
+    <h2 style="text-align:center; font-family:'Orbitron'; color:#00ff9d; margin-bottom:3rem; font-size:2.5rem;">আমাদের বেস্ট সেলার প্রোডাক্ট</h2>
+    
+    <div class="grid">
+
+      <div class="product-card">
+        <img src="https://thumbs.dreamstime.com/b/futuristic-gaming-mouse-neon-lights-reflective-surface-suitable-diverse-creative-needs-futuristic-gaming-mouse-358068106.jpg" alt="Neon RGB Mouse" class="product-img">
+        <div class="product-name">CyberNeon RGB Gaming Mouse</div>
+        <div class="price">৳ ৩,২৯৯</div>
+        <div class="rating">★★★★☆</div>
+        <div class="likes">১৪২ লাইক • র‍্যাঙ্ক #১</div>
+        <button class="btn-buy">কিনুন</button>
       </div>
+
+      <div class="product-card">
+        <img src="https://m.media-amazon.com/images/I/61ughhJxuML._AC_UF894,1000_QL80_.jpg" alt="RGB Mechanical Keyboard" class="product-img">
+        <div class="product-name">RedThunder 60% RGB Mechanical Keyboard</div>
+        <div class="price">৳ ৪,৫৯৯</div>
+        <div class="rating">★★★★★</div>
+        <div class="likes">২৮৭ লাইক • র‍্যাঙ্ক #২</div>
+        <button class="btn-buy">কিনুন</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://m.media-amazon.com/images/I/611WqWsUEjL.jpg" alt="RGB Gaming Headset" class="product-img">
+        <div class="product-name">Speedlink CONUX RGB Headset</div>
+        <div class="price">৳ ৩,৮৯৯</div>
+        <div class="rating">★★★★☆</div>
+        <div class="likes">১৯৬ লাইক • র‍্যাঙ্ক #৩</div>
+        <button class="btn-buy">কিনুন</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/74f24b26-fde1-4cd5-9304-62aad0c4f798.__CR0,0,600,450_PT0_SX600_V1___.jpg" alt="Wireless Controller" class="product-img">
+        <div class="product-name">Fosmon Wireless RGB Controller</div>
+        <div class="price">৳ ২,৯৯৯</div>
+        <div class="rating">★★★★☆</div>
+        <div class="likes">১০৫ লাইক • র‍্যাঙ্ক #৪</div>
+        <button class="btn-buy">কিনুন</button>
+      </div>
+
+      <!-- আরও প্রোডাক্ট যোগ করতে চাইলে এখানে কপি-পেস্ট করো -->
+
     </div>
   </section>
 
   <footer>
-    <p>© 2026 Feron Gaming Studio | Crafted with ❤️ for Gamers</p>
-  </footer>
-
-  <script>
-    function toggleMenu() {
-      document.getElementById('navLinks').classList.toggle('active');
-    }
-  </script>
-
-</body>
-</html>      align-items: center;
-      justify-content: center;
-      padding: 6rem 5% 4rem;
-      text-align: center;
-      background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 100%);
-    }
-
-    .hero-content {
-      max-width: 900px;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.4rem, 8vw, 4.2rem);
-      margin-bottom: 0.8rem;
-      background: linear-gradient(90deg, #7f7fff, #a78bfa);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      line-height: 1.1;
-    }
-
-    .hero h2 {
-      font-size: clamp(1.4rem, 5vw, 2rem);
-      color: #a0a0ff;
-      margin-bottom: 1.2rem;
-    }
-
-    .hero p {
-      font-size: clamp(1rem, 4vw, 1.2rem);
-      color: #b0b0ff;
-      margin-bottom: 2rem;
-      max-width: 90%;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .btn-group {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      max-width: 320px;
-      margin: 0 auto;
-    }
-
-    .btn {
-      display: block;
-      padding: 1rem 2rem;
-      background: #7f7fff;
-      color: white;
-      text-decoration: none;
-      border-radius: 50px;
-      font-weight: 500;
-      font-size: clamp(0.95rem, 4vw, 1.1rem);
-      transition: all 0.3s;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(127, 127, 255, 0.35);
-    }
-
-    .btn-outline {
-      background: transparent;
-      border: 2px solid #7f7fff;
-      color: #7f7fff;
-    }
-
-    /* Sections */
-    section {
-      padding: clamp(4rem, 10vw, 8rem) 5%;
-    }
-
-    h2.section-title {
-      text-align: center;
-      font-size: clamp(2rem, 6vw, 3.2rem);
-      margin-bottom: 3rem;
-      color: #7f7fff;
-    }
-
-    /* Skills - better mobile */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 1.4rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .skill-card {
-      background: rgba(25, 25, 45, 0.6);
-      padding: 1.8rem 1.2rem;
-      border-radius: 16px;
-      text-align: center;
-      border: 1px solid rgba(127, 127, 255, 0.2);
-      transition: all 0.4s;
-    }
-
-    .skill-card:hover {
-      transform: translateY(-8px);
-      border-color: #7f7fff;
-    }
-
-    .skill-card h3 {
-      margin-top: 0.9rem;
-      color: #a0a0ff;
-      font-size: clamp(1rem, 4vw, 1.15rem);
-    }
-
-    /* Footer */
-    footer {
-      background: #0a0a14;
-      padding: 4rem 5% 2rem;
-      text-align: center;
-      border-top: 1px solid rgba(127, 127, 255, 0.15);
-    }
-
-    footer p {
-      font-size: clamp(0.95rem, 3.5vw, 1.1rem);
-    }
-
-    /* Extra mobile improvements */
-    @media (max-width: 768px) {
-      .nav-links {
-        gap: 1rem;
-      }
-      
-      .hero {
-        padding-top: 7rem; /* navbar height consideration */
-      }
-      
-      .btn-group {
-        flex-direction: column;
-      }
-      
-      .btn {
-        width: 100%;
-      }
-    }
-
-    @media (max-width: 480px) {
-      nav {
-        padding: 0.8rem 6%;
-      }
-      
-      .hero p {
-        max-width: 95%;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <nav>
-    <div class="logo">সাহো</div>
-    <div class="nav-links">
-      <a href="#home">হোম</a>
-      <a href="#about">আমার সম্পর্কে</a>
-      <a href="#skills">দক্ষতা</a>
-      <a href="#contact">যোগাযোগ</a>
-    </div>
-  </nav>
-
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <h1>হ্যালো! আমি সাহো</h1>
-      <h2>ওয়েব ডেভেলপার & কনটেন্ট ক্রিয়েটর</h2>
-      <p>আমি সুন্দর, দ্রুত এবং ব্যবহারকারী-বান্ধব ওয়েবসাইট তৈরি করতে ভালোবাসি। নতুন কিছু শিখতে এবং তৈরি করতে সবসময় উৎসাহী থাকি।</p>
-      
-      <div class="btn-group">
-        <a href="#contact" class="btn">যোগাযোগ করুন</a>
-        <a href="#" class="btn btn-outline">প্রজেক্ট দেখুন</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- বাকি সেকশনগুলো একই রাখা যায় -->
-  <section id="about">
-    <h2 class="section-title">আমার সম্পর্কে</h2>
-    <div class="about-content">
-      <div class="about-text">
-        <p>আমি একজন প্যাশনেট ওয়েব ডেভেলপার যিনি বর্তমানে ফ্রন্টএন্ড এবং UI/UX ডিজাইনের উপর বেশি ফোকাস করছেন।</p>
-        <p>আমার লক্ষ্য হচ্ছে সাধারণ মানুষের জন্য সুন্দর, দ্রুত এবং সহজে বোঝার মতো ডিজিটাল অভিজ্ঞতা তৈরি করা।</p>
-        <p>যখন কোডিং করি না, তখন গান শুনি, ভ্রমণের প্ল্যান করি অথবা নতুন টেকনোলজি নিয়ে পড়াশোনা করি।</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="skills">
-    <h2 class="section-title">আমার দক্ষতা</h2>
-    <div class="skills-grid">
-      <div class="skill-card"><h3>HTML5 + CSS3</h3></div>
-      <div class="skill-card"><h3>JavaScript (ES6+)</h3></div>
-      <div class="skill-card"><h3>React.js</h3></div>
-      <div class="skill-card"><h3>Tailwind CSS</h3></div>
-      <div class="skill-card"><h3>Git & GitHub</h3></div>
-      <div class="skill-card"><h3>Responsive Design</h3></div>
-    </div>
-  </section>
-
-  <footer id="contact">
-    <p style="font-size: clamp(1.1rem, 4.5vw, 1.4rem); margin-bottom: 1.5rem;">আমার সাথে যোগাযোগ করতে চান?</p>
-    <p>✉️ saho@example.com</p>
-    <p style="margin-top: 2.5rem; color: #777799; font-size: clamp(0.9rem, 3.5vw, 0.95rem);">
-      © 2026 সাহো | Made with ❤️ & HTML5
-    </p>
+    <p>© ২০২৬ GamerZone | সকল প্রোডাক্ট স্টক ফটো ব্যবহার করা হয়েছে শুধু ডেমোর জন্য</p>
   </footer>
 
 </body>
