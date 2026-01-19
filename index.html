@@ -1,11 +1,262 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <title>আমার প্রথম ওয়েবসাইট</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>সাহো - ওয়েব ডেভেলপার ও ক্রিয়েটর</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Hind Siliguri', sans-serif;
+      background: #0f0f1a;
+      color: #e0e0ff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      background: rgba(15, 15, 26, 0.92);
+      backdrop-filter: blur(10px);
+      padding: 1rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(100, 100, 255, 0.15);
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #7f7fff;
+    }
+
+    .nav-links a {
+      color: #ccd6ff;
+      text-decoration: none;
+      margin-left: 2.5rem;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #7f7fff;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 5%;
+      background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 100%);
+    }
+
+    .hero-content {
+      max-width: 900px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 4.2rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(90deg, #7f7fff, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      color: #a0a0ff;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      color: #b0b0ff;
+      margin-bottom: 2.5rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 2.2rem;
+      background: #7f7fff;
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 500;
+      margin: 0 0.8rem;
+      transition: all 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(127, 127, 255, 0.35);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #7f7fff;
+      color: #7f7fff;
+    }
+
+    /* Sections */
+    section {
+      padding: 8rem 5%;
+    }
+
+    h2.section-title {
+      text-align: center;
+      font-size: 3.2rem;
+      margin-bottom: 4rem;
+      color: #7f7fff;
+    }
+
+    /* About */
+    .about-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-text p {
+      margin-bottom: 1.5rem;
+      font-size: 1.15rem;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.8rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .skill-card {
+      background: rgba(25, 25, 45, 0.6);
+      padding: 2rem 1.5rem;
+      border-radius: 16px;
+      text-align: center;
+      border: 1px solid rgba(127, 127, 255, 0.2);
+      transition: all 0.4s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-10px);
+      border-color: #7f7fff;
+      box-shadow: 0 15px 40px rgba(127, 127, 255, 0.15);
+    }
+
+    .skill-card h3 {
+      margin-top: 1rem;
+      color: #a0a0ff;
+    }
+
+    /* Footer */
+    footer {
+      background: #0a0a14;
+      padding: 4rem 5% 2rem;
+      text-align: center;
+      border-top: 1px solid rgba(127, 127, 255, 0.15);
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 3.2rem; }
+      .hero h2 { font-size: 1.6rem; }
+      .about-content { grid-template-columns: 1fr; }
+      .nav-links a { margin-left: 1.2rem; font-size: 0.95rem; }
+    }
+  </style>
 </head>
 <body>
-    <h1 style="color: blue; text-align: center;">অভিনন্দন!</h1>
-    <p style="text-align: center;">আমার প্রথম ওয়েবসাইটটি এখন গিটহাব পেজেস-এ সচল।</p>
+
+  <nav>
+    <div class="logo">সাহো</div>
+    <div class="nav-links">
+      <a href="#home">হোম</a>
+      <a href="#about">আমার সম্পর্কে</a>
+      <a href="#skills">দক্ষতা</a>
+      <a href="#contact">যোগাযোগ</a>
+    </div>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>হ্যালো! আমি সাহো</h1>
+      <h2>ওয়েব ডেভেলপার & কনটেন্ট ক্রিয়েটর</h2>
+      <p>আমি সুন্দর, দ্রুত এবং ব্যবহারকারী-বান্ধব ওয়েবসাইট তৈরি করতে ভালোবাসি। নতুন কিছু শিখতে এবং তৈরি করতে সবসময় উৎসাহী থাকি।</p>
+      
+      <div style="margin-top: 2rem;">
+        <a href="#contact" class="btn">যোগাযোগ করুন</a>
+        <a href="#" class="btn btn-outline">প্রজেক্ট দেখুন</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">আমার সম্পর্কে</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p>আমি একজন প্যাশনেট ওয়েব ডেভেলপার যিনি বর্তমানে ফ্রন্টএন্ড এবং UI/UX ডিজাইনের উপর বেশি ফোকাস করছেন।</p>
+        <p>আমার লক্ষ্য হচ্ছে সাধারণ মানুষের জন্য সুন্দর, দ্রুত এবং সহজে বোঝার মতো ডিজিটাল অভিজ্ঞতা তৈরি করা।</p>
+        <p>যখন কোডিং করি না, তখন গান শুনি, ভ্রমণের প্ল্যান করি অথবা নতুন টেকনোলজি নিয়ে পড়াশোনা করি।</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title">আমার দক্ষতা</h2>
+    
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>HTML5 + CSS3</h3>
+      </div>
+      <div class="skill-card">
+        <h3>JavaScript (ES6+)</h3>
+      </div>
+      <div class="skill-card">
+        <h3>React.js</h3>
+      </div>
+      <div class="skill-card">
+        <h3>Tailwind CSS</h3>
+      </div>
+      <div class="skill-card">
+        <h3>Git & GitHub</h3>
+      </div>
+      <div class="skill-card">
+        <h3>Responsive Design</h3>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <p style="font-size: 1.4rem; margin-bottom: 1.5rem;">আমার সাথে যোগাযোগ করতে চান?</p>
+    <p>✉️ saho@example.com</p>
+    <p style="margin-top: 2.5rem; color: #777799; font-size: 0.95rem;">
+      © 2026 সাহো | Made with ❤️ & HTML5
+    </p>
+  </footer>
+
 </body>
 </html>
