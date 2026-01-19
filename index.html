@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>সাহো - ওয়েব ডেভেলপার ও ক্রিয়েটর</title>
+  <title>Feron Gaming Studio - Level Up Your Experience</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   
   <style>
     * {
@@ -16,56 +16,225 @@
     }
 
     body {
-      font-family: 'Hind Siliguri', sans-serif;
-      background: #0f0f1a;
-      color: #e0e0ff;
-      line-height: 1.6;
+      font-family: 'Roboto', sans-serif;
+      background: #0a0a0a;
+      color: #e0e0e0;
+      line-height: 1.5;
       overflow-x: hidden;
     }
 
-    /* Navbar - Mobile friendly */
+    /* Navbar */
     nav {
       position: fixed;
-      width: 100%;
       top: 0;
+      width: 100%;
       z-index: 1000;
-      background: rgba(15, 15, 26, 0.95);
-      backdrop-filter: blur(10px);
-      padding: 0.9rem 5%;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      padding: 1rem 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid rgba(100, 100, 255, 0.15);
+      border-bottom: 1px solid #00ff9d33;
     }
 
     .logo {
-      font-size: clamp(1.4rem, 5vw, 1.8rem);
-      font-weight: 600;
-      color: #7f7fff;
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.6rem, 6vw, 2.2rem);
+      color: #00ff9d;
+      font-weight: 900;
+      letter-spacing: 2px;
     }
 
     .nav-links {
       display: flex;
-      gap: 1.4rem;
+      gap: 2.5rem;
     }
 
     .nav-links a {
-      color: #ccd6ff;
+      color: #d0ffd0;
       text-decoration: none;
-      font-size: clamp(0.9rem, 3.5vw, 1rem);
-      font-weight: 500;
+      font-weight: 700;
+      font-size: 1.1rem;
       transition: 0.3s;
     }
 
     .nav-links a:hover {
-      color: #7f7fff;
+      color: #00ff9d;
+      text-shadow: 0 0 10px #00ff9d;
     }
 
-    /* Hero - Improved mobile */
+    /* Mobile Menu */
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      color: #00ff9d;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        align-items: center;
+        gap: 1.8rem;
+        padding: 2rem 0;
+        transform: translateY(-100%);
+        transition: transform 0.4s ease;
+      }
+
+      .nav-links.active {
+        transform: translateY(0);
+      }
+
+      .nav-links a {
+        font-size: 1.4rem;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    /* Hero */
     .hero {
       min-height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
+                  url('https://images.stockcake.com/public/d/4/c/d4c2d1fc-6fa7-4072-938e-49390200316c/cyberpunk-ninja-rises-stockcake.jpg') center/cover no-repeat;
       display: flex;
       align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 5%;
+    }
+
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .hero h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(2.8rem, 10vw, 5.5rem);
+      color: #00ff9d;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 20px #00ff9d66;
+      letter-spacing: 4px;
+    }
+
+    .hero h2 {
+      font-size: clamp(1.6rem, 6vw, 2.8rem);
+      color: #ffffff;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: clamp(1.1rem, 4vw, 1.4rem);
+      color: #b0ffb0;
+      margin-bottom: 3rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 1.2rem 3rem;
+      background: #00ff9d;
+      color: #000;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 50px;
+      font-size: 1.3rem;
+      margin: 0.8rem;
+      transition: all 0.4s;
+      box-shadow: 0 0 30px #00ff9d66;
+    }
+
+    .btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 50px #00ff9d;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 3px solid #00ff9d;
+      color: #00ff9d;
+    }
+
+    /* Footer */
+    footer {
+      background: #000;
+      padding: 4rem 5%;
+      text-align: center;
+      border-top: 1px solid #00ff9d33;
+    }
+
+    footer p {
+      font-size: 1.1rem;
+      color: #777;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding-top: 6rem;
+      }
+
+      .btn {
+        padding: 1rem 2.5rem;
+        font-size: 1.1rem;
+        width: 80%;
+        margin: 1rem auto;
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">FERON</div>
+    
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    
+    <div class="nav-links" id="navLinks">
+      <a href="#">হোম</a>
+      <a href="#">গেমস</a>
+      <a href="#">আমাদের সম্পর্কে</a>
+      <a href="#">যোগাযোগ</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>LEVEL UP</h1>
+      <h2>NEW GAMING EXPERIENCE</h2>
+      <p>YOUR ULTIMATE LIVE GAMING WORLD... একটা গেম স্টুডিও যারা immersive gameplay ও high-quality mechanics প্রায়োরিটি দেয়।</p>
+      
+      <div>
+        <a href="#" class="btn">PURCHASE GAME</a>
+        <a href="#" class="btn btn-outline">VIEW MORE</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Feron Gaming Studio | Crafted with ❤️ for Gamers</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>      align-items: center;
       justify-content: center;
       padding: 6rem 5% 4rem;
       text-align: center;
