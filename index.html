@@ -23,7 +23,7 @@
     }
 
     header {
-      background: rgba(0, 0, 0, 0.92);
+      background: rgba(0, 0, 0, 0.95);
       backdrop-filter: blur(10px);
       position: fixed;
       width: 100%;
@@ -33,7 +33,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #00ff9d33;
+      border-bottom: 1px solid #00ff9d44;
     }
 
     .logo {
@@ -41,17 +41,17 @@
       font-size: clamp(1.6rem, 6vw, 2.2rem);
       color: #00ff9d;
       font-weight: 700;
+      letter-spacing: 1px;
     }
 
-    .nav-menu {
+    .nav-container {
       display: flex;
       align-items: center;
-      gap: 2.2rem;
     }
 
     .nav-links {
       display: flex;
-      gap: 2rem;
+      gap: 2.2rem;
       list-style: none;
     }
 
@@ -60,33 +60,45 @@
       text-decoration: none;
       font-weight: 500;
       font-size: 1.05rem;
-      transition: 0.3s;
+      transition: all 0.3s;
     }
 
     .nav-links a:hover {
       color: #00ff9d;
-      text-shadow: 0 0 8px #00ff9d88;
+      text-shadow: 0 0 10px #00ff9d88;
     }
 
-    /* Hamburger */
     .hamburger {
       display: none;
       flex-direction: column;
       justify-content: space-between;
-      width: 30px;
-      height: 21px;
+      width: 32px;
+      height: 24px;
       cursor: pointer;
+      z-index: 1100;
     }
 
     .hamburger span {
       width: 100%;
-      height: 3px;
+      height: 4px;
       background: #00ff9d;
       border-radius: 2px;
-      transition: all 0.3s ease;
+      transition: all 0.4s ease;
+      box-shadow: 0 0 8px #00ff9d66;
     }
 
-    /* Mobile Menu */
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(8px, 8px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+
     @media (max-width: 768px) {
       .nav-links {
         position: absolute;
@@ -96,13 +108,13 @@
         background: rgba(10, 10, 14, 0.98);
         flex-direction: column;
         align-items: center;
-        gap: 2.5rem;
-        padding: 3rem 0 4rem;
-        transform: translateY(-20px);
+        gap: 2.8rem;
+        padding: 3rem 0 5rem;
+        transform: translateY(-30px);
         opacity: 0;
         visibility: hidden;
-        transition: all 0.4s ease;
-        border-bottom: 1px solid #00ff9d44;
+        transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        border-bottom: 1px solid #00ff9d55;
       }
 
       .nav-links.active {
@@ -112,23 +124,18 @@
       }
 
       .nav-links a {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
       }
 
       .hamburger {
         display: flex;
       }
-
-      .nav-menu {
-        gap: 1.5rem;
-      }
     }
 
-    /* Hero & Products (আগের মতোই রাখা) */
     .hero {
-      height: 60vh;
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
-                  url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80') center/cover;
+      height: 65vh;
+      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+                  url('https://www.makerstations.io/content/images/size/w1200/2022/04/gerwyn-manuel-desk-setup-eva-10-1.jpg') center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -138,21 +145,30 @@
 
     .hero h1 {
       font-family: 'Orbitron', sans-serif;
-      font-size: clamp(2.5rem, 8vw, 5rem);
+      font-size: clamp(2.8rem, 9vw, 5.5rem);
       color: #00ff9d;
-      text-shadow: 0 0 20px #00ff9d88;
+      text-shadow: 0 0 25px #00ff9d99;
+      letter-spacing: 2px;
     }
 
     .products {
-      padding: 4rem 5%;
+      padding: 5rem 5% 4rem;
       max-width: 1400px;
       margin: 0 auto;
+    }
+
+    .products h2 {
+      text-align: center;
+      font-family: 'Orbitron', sans-serif;
+      color: #00ff9d;
+      font-size: clamp(2rem, 6vw, 3rem);
+      margin-bottom: 3.5rem;
     }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
+      gap: 2.2rem;
     }
 
     .product-card {
@@ -160,15 +176,15 @@
       border-radius: 16px;
       overflow: hidden;
       border: 1px solid #00ff9d22;
-      transition: all 0.3s;
+      transition: all 0.4s ease;
       text-align: center;
-      padding: 1.2rem;
+      padding: 1.4rem;
     }
 
     .product-card:hover {
-      transform: translateY(-10px);
+      transform: translateY(-12px) scale(1.02);
       border-color: #00ff9d;
-      box-shadow: 0 15px 40px rgba(0, 255, 157, 0.15);
+      box-shadow: 0 20px 50px rgba(0, 255, 157, 0.18);
     }
 
     .product-img {
@@ -177,63 +193,65 @@
       object-fit: contain;
       background: #000;
       border-radius: 12px;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
     }
 
     .product-name {
-      font-size: 1.3rem;
+      font-size: 1.35rem;
       font-weight: 700;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
       color: #ffffff;
     }
 
     .price {
-      font-size: 1.6rem;
+      font-size: 1.7rem;
       color: #00ff9d;
       font-weight: 700;
-      margin: 0.5rem 0;
+      margin: 0.6rem 0;
     }
 
     .rating {
       color: #ffd700;
-      font-size: 1.1rem;
-      margin: 0.6rem 0;
+      font-size: 1.15rem;
+      margin: 0.7rem 0;
     }
 
     .likes {
       color: #ff6b6b;
-      font-size: 0.95rem;
-      margin-bottom: 1rem;
+      font-size: 1rem;
+      margin-bottom: 1.2rem;
     }
 
     .btn-buy {
-      background: #00ff9d;
+      background: linear-gradient(135deg, #00ff9d, #00e08c);
       color: #000;
       border: none;
-      padding: 0.9rem 2rem;
+      padding: 1rem 2.2rem;
       border-radius: 50px;
       font-weight: 700;
       cursor: pointer;
       transition: all 0.3s;
       width: 100%;
+      font-size: 1.1rem;
     }
 
     .btn-buy:hover {
-      background: #00e08c;
-      transform: scale(1.05);
+      transform: scale(1.06);
+      box-shadow: 0 10px 30px rgba(0, 255, 157, 0.4);
     }
 
     footer {
       background: #000;
-      padding: 3rem 5%;
+      padding: 3.5rem 5%;
       text-align: center;
       border-top: 1px solid #00ff9d33;
-      color: #777799;
+      color: #8888aa;
+      font-size: 0.95rem;
     }
 
     @media (max-width: 768px) {
-      .hero h1 { font-size: 3.5rem; }
-      .products { padding: 3rem 6%; }
+      .hero { height: 50vh; margin-top: 60px; }
+      .products { padding: 4rem 6% 3rem; }
     }
   </style>
 </head>
@@ -242,7 +260,7 @@
   <header>
     <div class="logo">GamerZone</div>
     
-    <div class="nav-menu">
+    <div class="nav-container">
       <ul class="nav-links" id="navLinks">
         <li><a href="#">হোম</a></li>
         <li><a href="#">প্রোডাক্ট</a></li>
@@ -263,24 +281,51 @@
   </section>
 
   <section class="products">
-    <h2 style="text-align:center; font-family:'Orbitron'; color:#00ff9d; margin-bottom:3rem; font-size:2.5rem;">আমাদের বেস্ট সেলার প্রোডাক্ট</h2>
+    <h2>আমাদের বেস্ট সেলার প্রোডাক্ট</h2>
     
     <div class="grid">
-      <!-- প্রোডাক্ট কার্ডগুলো আগের মতোই রাখা যায় – স্পেস সেভ করার জন্য এখানে শর্ট করে দিলাম -->
+
       <div class="product-card">
-        <img src="https://thumbs.dreamstime.com/b/futuristic-gaming-mouse-neon-lights-reflective-surface-suitable-diverse-creative-needs-futuristic-gaming-mouse-358068106.jpg" alt="Neon RGB Mouse" class="product-img">
+        <img src="https://www.shutterstock.com/image-photo/computer-mouse-rgb-keyboard-game-260nw-2495198231.jpg" alt="Neon RGB Mouse" class="product-img">
         <div class="product-name">CyberNeon RGB Gaming Mouse</div>
         <div class="price">৳ ৩,২৯৯</div>
         <div class="rating">★★★★☆</div>
         <div class="likes">১৪২ লাইক • র‍্যাঙ্ক #১</div>
         <button class="btn-buy">কিনুন</button>
       </div>
-      <!-- বাকি প্রোডাক্ট কার্ডগুলো আগের কোড থেকে কপি করে পেস্ট করুন -->
+
+      <div class="product-card">
+        <img src="https://www.shutterstock.com/image-photo/computer-mouse-headset-rgb-keyboard-260nw-2515008051.jpg" alt="RGB Keyboard & Headset" class="product-img">
+        <div class="product-name">RGB Mechanical Keyboard + Headset Combo</div>
+        <div class="price">৳ ৫,৯৯৯</div>
+        <div class="rating">★★★★★</div>
+        <div class="likes">৩২৫ লাইক • র‍্যাঙ্ক #২</div>
+        <button class="btn-buy">কিনুন</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/2601fabd-84f6-4385-b50f-583b50fc2e20.__CR0,0,970,600_PT0_SX970_V1___.jpg" alt="Gaming Combo" class="product-img">
+        <div class="product-name">MANBASNAKE RGB Gaming Combo Set</div>
+        <div class="price">৳ ৪,৭৯৯</div>
+        <div class="rating">★★★★☆</div>
+        <div class="likes">২১৮ লাইক • র‍্যাঙ্ক #৩</div>
+        <button class="btn-buy">কিনুন</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://thumbs.dreamstime.com/b/cyberpunk-gaming-setup-neon-lights-futuristic-cyberpunk-gaming-setup-illuminated-vibrant-neon-purple-blue-lights-412227118.jpg" alt="Full Setup" class="product-img">
+        <div class="product-name">Neon Cyberpunk Gaming Setup Kit</div>
+        <div class="price">৳ ১২,৯৯৯</div>
+        <div class="rating">★★★★★</div>
+        <div class="likes">১৮৭ লাইক • র‍্যাঙ্ক #৪</div>
+        <button class="btn-buy">কিনুন</button>
+      </div>
+
     </div>
   </section>
 
   <footer>
-    <p>© ২০২৬ GamerZone | Made with ❤️ for Gamers</p>
+    <p>© ২০২৬ GamerZone | Dhaka, Bangladesh | Made with ❤️ for True Gamers</p>
   </footer>
 
   <script>
@@ -288,18 +333,24 @@
     const navLinks = document.getElementById('navLinks');
 
     hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      
-      // Optional: hamburger to X animation
       hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
     });
 
-    // Close menu when clicking a link (mobile)
+    // মেনু লিঙ্ক ক্লিক করলে মেনু বন্ধ হবে (মোবাইলে)
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
         hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
       });
+    });
+
+    // মেনুর বাইরে ক্লিক করলে বন্ধ হবে
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+      }
     });
   </script>
 
