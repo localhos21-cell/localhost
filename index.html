@@ -22,6 +22,7 @@
       line-height: 1.6;
     }
 
+    /* Header & Nav (আগের মতো) */
     header {
       background: rgba(0, 0, 0, 0.95);
       backdrop-filter: blur(10px);
@@ -132,6 +133,7 @@
       }
     }
 
+    /* Hero & Products (আগের মতো) */
     .hero {
       height: 65vh;
       background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
@@ -240,23 +242,88 @@
       box-shadow: 0 10px 30px rgba(0, 255, 157, 0.4);
     }
 
-    footer {
-      background: #000;
-      padding: 3.5rem 5%;
+    /* Social & Payment Section (নতুন যোগ) */
+    .social-payment {
+      background: #0d0d14;
+      padding: 3rem 5% 2rem;
       text-align: center;
       border-top: 1px solid #00ff9d33;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .social-icon {
+      width: 50px;
+      height: 50px;
+      transition: all 0.3s;
+    }
+
+    .social-icon:hover {
+      transform: scale(1.15);
+      filter: drop-shadow(0 0 10px #00ff9d88);
+    }
+
+    .payment-section {
+      margin-top: 1.5rem;
+    }
+
+    .payment-section h4 {
+      color: #00ff9d;
+      font-size: 1.4rem;
+      margin-bottom: 1.2rem;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .payment-methods {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .payment-item {
+      text-align: center;
+    }
+
+    .payment-logo {
+      width: 80px;
+      height: auto;
+      margin-bottom: 0.8rem;
+    }
+
+    .payment-number {
+      color: #b0ffb0;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    /* Footer */
+    footer {
+      background: #000;
+      padding: 2rem 5%;
+      text-align: center;
       color: #8888aa;
       font-size: 0.95rem;
+      border-top: 1px solid #00ff9d22;
     }
 
     @media (max-width: 768px) {
-      .hero { height: 50vh; margin-top: 60px; }
-      .products { padding: 4rem 6% 3rem; }
+      .social-icons { gap: 1.8rem; }
+      .social-icon { width: 45px; height: 45px; }
+      .payment-methods { gap: 2rem; }
+      .payment-logo { width: 70px; }
     }
   </style>
 </head>
 <body>
 
+  <!-- Header & Nav (আগের মতো) -->
   <header>
     <div class="logo">GamerZone</div>
     
@@ -284,7 +351,7 @@
     <h2>আমাদের বেস্ট সেলার প্রোডাক্ট</h2>
     
     <div class="grid">
-
+      <!-- তোমার প্রোডাক্ট কার্ডগুলো এখানে রাখো – আগের কোড থেকে কপি করে নাও -->
       <div class="product-card">
         <img src="https://www.shutterstock.com/image-photo/computer-mouse-rgb-keyboard-game-260nw-2495198231.jpg" alt="Neon RGB Mouse" class="product-img">
         <div class="product-name">CyberNeon RGB Gaming Mouse</div>
@@ -293,34 +360,43 @@
         <div class="likes">১৪২ লাইক • র‍্যাঙ্ক #১</div>
         <button class="btn-buy">কিনুন</button>
       </div>
+      <!-- বাকি কার্ড যোগ করো -->
+    </div>
+  </section>
 
-      <div class="product-card">
-        <img src="https://www.shutterstock.com/image-photo/computer-mouse-headset-rgb-keyboard-260nw-2515008051.jpg" alt="RGB Keyboard & Headset" class="product-img">
-        <div class="product-name">RGB Mechanical Keyboard + Headset Combo</div>
-        <div class="price">৳ ৫,৯৯৯</div>
-        <div class="rating">★★★★★</div>
-        <div class="likes">৩২৫ লাইক • র‍্যাঙ্ক #২</div>
-        <button class="btn-buy">কিনুন</button>
+  <!-- নতুন: Social + Payment Section -->
+  <section class="social-payment">
+    <div class="social-icons">
+      <a href="https://fb.com/cdsaho" target="_blank" rel="noopener">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Facebook_Logo_2023.png" alt="Facebook" class="social-icon">
+      </a>
+      <a href="https://youtube.com/@cdsaho" target="_blank" rel="noopener">  <!-- তোমার ইউটিউব চ্যানেল লিঙ্ক দাও -->
+        <img src="https://www.freeiconspng.com/uploads/youtube-logo-png-27.png" alt="YouTube" class="social-icon">
+      </a>
+      <a href="https://wa.me/8801601196121" target="_blank" rel="noopener">
+        <img src="https://www.freeiconspng.com/uploads/whatsapp-logo-png-3.png" alt="WhatsApp" class="social-icon">
+      </a>
+      <a href="mailto:localhos21@gmail.com">
+        <img src="https://img.icons8.com/?size=100&id=139&id=139" alt="Email" class="social-icon">  <!-- Gmail/Email আইকন -->
+      </a>
+    </div>
+
+    <div class="payment-section">
+      <h4>পেমেন্ট মেথড</h4>
+      <div class="payment-methods">
+        <div class="payment-item">
+          <img src="https://wp.logos-download.com/wp-content/uploads/2022/01/BKash_Logo_icon.svg" alt="bKash" class="payment-logo">
+          <div class="payment-number">01601196121</div>
+        </div>
+        <div class="payment-item">
+          <img src="https://seeklogo.com/images/N/nagad-logo-3E5E5E5E5E-seeklogo.com.png" alt="Nagad" class="payment-logo">
+          <div class="payment-number">01601196121</div>
+        </div>
+        <div class="payment-item">
+          <img src="https://seeklogo.com/images/R/rocket-logo-rocket-by-dutch-bangla-bank-seeklogo.com.png" alt="Rocket" class="payment-logo">
+          <div class="payment-number">01601196121</div>
+        </div>
       </div>
-
-      <div class="product-card">
-        <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/2601fabd-84f6-4385-b50f-583b50fc2e20.__CR0,0,970,600_PT0_SX970_V1___.jpg" alt="Gaming Combo" class="product-img">
-        <div class="product-name">MANBASNAKE RGB Gaming Combo Set</div>
-        <div class="price">৳ ৪,৭৯৯</div>
-        <div class="rating">★★★★☆</div>
-        <div class="likes">২১৮ লাইক • র‍্যাঙ্ক #৩</div>
-        <button class="btn-buy">কিনুন</button>
-      </div>
-
-      <div class="product-card">
-        <img src="https://thumbs.dreamstime.com/b/cyberpunk-gaming-setup-neon-lights-futuristic-cyberpunk-gaming-setup-illuminated-vibrant-neon-purple-blue-lights-412227118.jpg" alt="Full Setup" class="product-img">
-        <div class="product-name">Neon Cyberpunk Gaming Setup Kit</div>
-        <div class="price">৳ ১২,৯৯৯</div>
-        <div class="rating">★★★★★</div>
-        <div class="likes">১৮৭ লাইক • র‍্যাঙ্ক #৪</div>
-        <button class="btn-buy">কিনুন</button>
-      </div>
-
     </div>
   </section>
 
@@ -337,7 +413,6 @@
       navLinks.classList.toggle('active');
     });
 
-    // মেনু লিঙ্ক ক্লিক করলে মেনু বন্ধ হবে (মোবাইলে)
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', () => {
         hamburger.classList.remove('active');
@@ -345,7 +420,6 @@
       });
     });
 
-    // মেনুর বাইরে ক্লিক করলে বন্ধ হবে
     document.addEventListener('click', (e) => {
       if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
         hamburger.classList.remove('active');
